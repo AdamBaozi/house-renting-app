@@ -1,0 +1,39 @@
+.groupItem {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* 竖直居中摆放 */
+    align-items: center; 
+    justify-content: space-between;
+    padding: 0 0.6rem;
+
+}
+
+.desc {
+    display: flex;
+    /* 主轴上元素居中摆放 */
+    justify-content: center;
+    flex: 0 0 auto;
+    flex-direction: column;
+}
+
+.image {
+    flex: 0 0 auto;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 0.2rem;
+}
+
+.viceTitle {
+    font-size: 12px;
+}
+
+.embeddedImg {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+}

@@ -1,0 +1,98 @@
+.content {
+    height: 200px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    user-select: none;
+  }
+
+  .layout {
+    width: 100%;
+    background-color: #F6F6F6;
+    
+  }
+
+ .swiper-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* 调整轮播图的高度 */
+ }
+
+ .input-overlay {
+  position: absolute;
+  top: 20px; /* 调整输入框的垂直位置 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* 调整输入框的宽度 */
+  max-width: 600px;
+  z-index: 10; /* 确保输入框在轮播图上层 */
+  display: flex;
+  justify-content: center;
+}
+
+.inputForm {
+  display: flex;
+  width: 100%; /*确保form占满父容器的宽度 */
+  align-items: center;
+}
+
+.location {
+  width: 100px;
+}
+
+.address {
+  flex: 1;
+  margin-left:10px
+}
+
+  .toolBar {
+    padding: 1.2rem 0;
+    background-color: #ffffff;
+  }
+
+  .groupList {
+
+  }
+
+  .guide {
+    display: float;
+    height: 40px;
+  }
+
+  .groupTitle {
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    line-height: 40px;
+  }
+
+  .getMore {
+    float: right;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* 你可以根据需要调整宽度 */
+    height: 200px; /* 你可以根据需要调整高度 */
+  }
+  
+  .box {
+    width: 50%; /* 每个盒子占据容器宽度的一半 */
+    height: 50%; /* 每个盒子占据容器高度的一半 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #F6F6F6;
+    box-sizing: border-box; /* 使边框包含在盒子的宽度和高度中 */
+    font-size: 24px;
+    background-color: #ffffff;
+  }
+
+  .news {
+    background-color: #ffffff;
+    margin: 0.3rem;
+    padding: 0.5rem;
+  }
