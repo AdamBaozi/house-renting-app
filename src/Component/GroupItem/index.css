@@ -18,8 +18,10 @@
     flex-direction: column;
 }
 
-.image {
+.groupImage {
     flex: 0 0 auto;
+    height: 65px;
+    width: 65px;
 }
 
 .title {

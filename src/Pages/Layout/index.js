@@ -7,10 +7,12 @@ import {
     MessageFill,
     UnorderedListOutline,
     UserOutline,
-    DownOutline
+    DownFill,
+    SearchOutline
 } from 'antd-mobile-icons'
 import GroupItem from '../../Component/GroupItem';
 import NewsItem from '../../Component/NewsItem';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 //使用 require.context 动态导入图片
 // const importAll = (r) => {
@@ -22,6 +24,9 @@ import NewsItem from '../../Component/NewsItem';
 //   const images = importAll(require.context('../../assets/', false, /\.(png|jpe?g|svg)$/));
 
 const Layout = () => {
+    const navigate = useNavigate();
+    const location = useLocation()
+    const { pathname } = location
 
 
     // useEffect(()=> {
@@ -111,6 +116,29 @@ const Layout = () => {
         },
     ]
 
+    const bottomTabs = [
+        {
+          key: '/',
+          title: '首页',
+          icon: <AppOutline />,
+        },
+        {
+          key: '/find',
+          title: '找房',
+          icon: <SearchOutline />,
+        },
+        {
+          key: '/message',
+          title: '资讯',
+          icon: <MessageOutline />,
+        },
+        {
+          key: '/me',
+          title: '我的',
+          icon: <UserOutline />,
+        },
+      ]
+
     const [activeKey, setActiveKey] = useState('todo')
 
     const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac']
@@ -128,6 +156,23 @@ const Layout = () => {
         </Swiper.Item>
     ))
 
+    const extra = (
+        <div className='inputExtra'>
+            <Button className="custom-button">
+                <span className="button-text">Click Me</span>
+                <DownFill className="button-icon" />
+            </Button>
+            <SearchOutline className='searchIcon' />
+
+        </div>
+
+    )
+
+    const clickLocation = () => {
+        console.log('hhhh');
+        navigate('/locationList');
+    }
+
     return (
         <div className="layout">
             <div className="swiper-container">
@@ -143,13 +188,18 @@ const Layout = () => {
 
                 <div className='input-overlay'>
                     <Form layout='horizontal' className='inputForm'>
-                        <Form.Item name='location' className='location'>
-                            <Dropdown>
-                                <Dropdown.Item key='sorter' title='排序'>
-                                </Dropdown.Item>
-                            </Dropdown>
-                        </Form.Item>
-                        <Form.Item name='address' className='address'>
+
+                        <Form.Item name='address' className='address'
+                            extra={
+                                <div className='inputExtra'>
+                                    <Button className="custom-button" onClick={clickLocation}>
+                                        <span className="button-text">Click Me</span>
+                                        <DownFill className="button-icon" />
+                                    </Button>
+                                    <SearchOutline className='searchIcon' />
+                                </div>
+                            }
+                        >
                             <Input
                                 placeholder='请输入小区或地址'
                                 clearable
@@ -190,6 +240,13 @@ const Layout = () => {
                     </div>
                 ))}
             </div>
+            {/* <div className='bottom'>
+                <TabBar activeKey={pathname} onChange={value => navigate(value)}>
+                    {bottomTabs.map(item => (
+                        <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+                    ))}
+                </TabBar>
+            </div> */}
         </div>
     )
 }

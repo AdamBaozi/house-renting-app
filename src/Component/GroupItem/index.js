@@ -25,8 +25,9 @@ const GroupItem = ({id, title, desc, imgSrc}) => {
                 <span className='title'>{title}</span>
                 <span className='viceTitle'>{desc}</span>
             </div>
-            <div className="image">
-                <img className='embeddedImg' src={getImagePath(imgSrc, images, 'groups')}/>
+            <div className="groupImage">
+                {/* <img className='embeddedImg' src={getImagePath(imgSrc, images, 'groups')}/> */}
+                <img className='embeddedImg' src={require(`../../assets${imgSrc}`)}/>
                 {/* <img className='embeddedImg' src={getImagePath(imgSrc)}/> */}
             </div>
         </div>

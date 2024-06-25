@@ -10,6 +10,7 @@
 
   .layout {
     width: 100%;
+    height: 100%;
     background-color: #F6F6F6;
     
   }
@@ -38,13 +39,38 @@
   align-items: center;
 }
 
+.custom-button{
+  width: 50%;
+  flex: 1;
+  display: flex;
+}
+
+.button-text {
+  font-size:12px;
+}
+
+.button-icon {
+  width: 20px;
+  flex: 0 0 0;
+}
+
+.inputExtra {
+  display: inline-block;
+}
+
+.searchIcon {
+  display: inline-block;
+}
+
+
 .location {
   width: 100px;
 }
 
 .address {
   flex: 1;
-  margin-left:10px
+  margin-left:10px;
+  display: inline-block;
 }
 
   .toolBar {

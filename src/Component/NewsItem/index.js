@@ -6,8 +6,8 @@ const images = importAll(require.context('../../assets/img/news', false, /\.(png
 const NewsItem = ({id, title, imgSrc, from, date}) => {
     return (
         <div className="newItem" id={id}>
-            <div className="image">
-                <img src={getImagePath(imgSrc,images, 'news')}/>
+            <div className="NewsImage">
+                <img src={require(`../../assets${imgSrc}`)}/>
             </div>
             <div className="desc">
                 <span className="title">{title}</span>

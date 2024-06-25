@@ -3,6 +3,7 @@ import Message from '../Pages/Message';
 import Find from '../Pages/Find';
 import Me from '../Pages/Me';
 import Layout from '../Pages/Layout';
+import LocationList from '../Pages/locationList';
 const { createBrowserRouter } = require("react-router-dom");
 
 const router = createBrowserRouter([
@@ -11,8 +12,14 @@ const router = createBrowserRouter([
         element: <Home/>,
         children: [
             {
-                path: 'layout',
-                element: <Layout/>
+                index: true,
+                element: <Layout/>,
+                // children: [
+                //     {
+                //         path: 'locationList',
+                //         element: <LocationList/>
+                //     }
+                // ]
             },
             {
                 path: 'find',
@@ -27,6 +34,10 @@ const router = createBrowserRouter([
                 element: <Me/>
             }
         ]
+    },
+    {
+        path: '/locationList',
+        element: <LocationList/>
     }
 ])
 
